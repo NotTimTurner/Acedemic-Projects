@@ -1,0 +1,86 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+   
+   <!-- Name: Tim Turner 
+		file: index.html-->
+		
+<HTML>
+	<head>
+		<title> Tim Turners Webpage</title>
+		<link rel="stylesheet" type="text/css" a href="style.css"/>
+		
+		<script type= "text/javascript">
+		<!--Favorite things array
+		function Things()
+		{
+			var favorite= new Array();
+			favorite[0]="League of Legends";	
+			favorite[1]="Skyrim";
+			favorite[2]="Shogun: Total War";
+			favorite[3]="The Witcher";
+			favorite[4]="Borderlands";
+			
+			
+			favorite.sort();
+			
+			document.writeln("My favorite Video Games: ");
+			for(var i = 0; i < 5; i++)
+			{
+				
+				document.writeln(i+1+". "+favorite[i]+"<br/>");
+			}
+			document.write("\r\n");
+				
+		}	
+		
+		<!--define Today function
+		function Today()
+		{
+			var date = new Date();
+			var day = date.getDate();
+			var month=date.getMonth()+1;
+			var year=date.getFullYear();
+			var hour=date.getHours();
+			var minute=date.getMinutes();
+			
+			if( hour<12)
+			document.write(" good morning it is "+month+"/"+day+"/"+year+" and the time is "+ hour+":"+ minute );
+			else if( hour>=12&& hour<=18)
+			document.write(" good morning it is "+month+"/"+day+"/"+year+" and the time is "+ hour+":"+ minute );
+			else if( hour<=19)
+			document.write(" good morning it is "+month+"/"+day+"/"+year+" and the time is "+ hour+":"+ minute );
+		}
+		</script>
+	</head>
+		<body>
+			
+			<h1> Tim Turners Webpage </h1>
+			
+			<script type= "text/javascript">
+			<!--  calls Today function
+			Things();
+			Today();
+			-->
+			</script>
+			
+		
+			<ul>Assignments
+			<li><a href="Project.html">Projects</a></li>
+			<li><a href="style.css">Style Sheet</a></li></ul>
+			<li><a href="hello.php">hello.php</a></li></ul>
+			<br/>
+			<br/>
+			<ul> Language experience
+			<li>XHTML- advanced</li>
+			<li>CSS- Expert  </li>
+			<li>JavaScript- advanced </li>
+			<li>PHP- advanced </li></ul>
+			<br/>
+		<ol> goals 
+		<li>to get higher than a D</li>
+		<li> to actually learn these languages</li>
+		<li> to not be a slacker</li></ol>
+		</body>
+
+</html>

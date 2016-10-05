@@ -1,0 +1,45 @@
+<?php session_start()?>	
+	<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+   
+   <!-- Name: Tim Turner 
+		file: CreateTourn.Php
+		Due Date:2/12/2012
+		URL:unixweb.kutztown.edu/~tturn265/CreateTourn.html
+		About: the user interface for starting a new tournament-->
+<HTML>
+	<head>
+	
+		<title> Create New Tournament </title>
+		<link rel="stylesheet" type="text/css" a href="style.css"/>
+	</head>
+	<body>
+		<div id="container" style="width:100%;height:100%;">
+
+			<div id="header" style="Text-align:center;border-style:solid;border-color:black">
+			<h1 style="margin-bottom:0;">Create an Tournament</h1>
+			</br>
+			</div>
+
+			
+
+			<div id="content" style="height:50%;width:75%;float:left;text-align:center;" >
+			<form onsubmit=" return check();"action= "NewAccount.php" method="post">
+				<p><label>* Organiser Name 
+				<input name= "fName" id="fName" type="text" size="25" />
+				<br>
+				<br>
+				
+
+				<input type= "submit" name="submit" value="submit" />
+				<input type="reset" name="reset" value="Clear" />
+				<p> Everything with a * is a required field</p>
+			</form>
+		  </div>
+		  <div id="footer" style="clear:both;text-align:center;border-style:solid;border-color:black">
+			This is a school project. please note their are still tons of bugs.
+		  </div>
+
+	</body>
+</html>

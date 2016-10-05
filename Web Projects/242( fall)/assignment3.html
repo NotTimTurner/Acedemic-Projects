@@ -1,0 +1,207 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!--
+     Name:         Tim Turner
+     Assignment 3: Form Shipping Page
+	 Purpose:	   Shipping webpage using a form
+     URL:          http://unixweb.kutztown.edu/~tturn265/assignment3.html
+     Course:       CSC 242 - Fall 2012
+     Due Date:     11-14-2012
+-->
+
+<html xmlns = "http://www.w3.org/1999/xhtml">
+   <head>
+      <title> assignment 3           </title>
+            
+   </head>
+   <body>
+   <form> 
+   <h1> ORDER FORM</h1>
+	<p><label>Item Price $
+			<input name= "iPrice" id="iPrice" type="text" size="25" />
+			<br>
+			<br>
+			<label>Standard Shipping 
+			<input name="SB" type="radio" id= "Standard" checked="true"  />
+			</label>
+			<label>Expadited Shipping
+			<input name="SB" type="radio" id= "Expadited"  />
+			</label>
+			<br>
+			<br>
+			<label>Shipping charge
+			<input name= "sPrice" id="sPrice" type="text" size="25" />
+			<br>
+			<br>
+			<label>Tax(6%) 
+			<input name= "tPrice" id="tPrice" type="text" size="25" />
+			<br>
+			<br>
+			<label>Total 
+			<input name= "totalPrice" id="totalPrice" type="text" size="25" />
+			<br>
+			<br>
+			<input type= "button" value="calculate" onClick="calc()"/>
+			<input type= "button" value="Submit"  />
+			<input type= "button" value="clear" onClick="this.form.reset()" />
+		</label>
+	</p>
+	</form>
+   <script type= "text/javascript">
+   //called when you hit the calculate button
+   function calc()
+   {
+   var shipping=parseFloat(shipping);
+   var Tax=parseFloat(Tax);
+    var Total=parseFloat(Total);
+    var iPrice=document.getElementById("iPrice").value;
+  var shipMethE = document.getElementById("Expadited").checked ;
+  var price;
+  // reformats the price	
+    price=iPrice;	
+	price=parseFloat(price);
+	document.getElementById("iPrice").value = price.toFixed(2);
+ 
+//calculates shipping
+			 if (shipMethE)
+				if( price<10)
+				{
+				shipping=9.50;
+				document.getElementById("sPrice").value ="$"+  shipping.toFixed(2);
+				}
+				else if( price<50)
+				{
+				shipping=12.00;
+				document.getElementById("sPrice").value ="$"+  shipping.toFixed(2);
+				}
+				else
+				{
+				shipping=15.25;
+				document.getElementById("sPrice").value ="$"+  shipping.toFixed(2);
+				}
+				
+			 else
+				if( price<10)
+				{
+				 shipping=4.50;
+				document.getElementById("sPrice").value ="$"+  shipping.toFixed(2);
+				}
+				else if( price<50)
+				{
+				shipping=7.00;
+				document.getElementById("sPrice").value ="$"+  shipping.toFixed(2);
+				}
+				else
+				{
+				shipping=10.25;
+				document.getElementById("sPrice").value ="$"+  shipping.toFixed(2);
+				}
+		
+
+				
+	//calculates tax
+				Tax=iPrice*.06
+	document.getElementById("tPrice").value ="$"+  Tax.toFixed(2);
+	
+	total=Tax+price+shipping;
+	document.getElementById("totalPrice").value ="$"+  total.toFixed(2);
+   }
+   
+ 
+<!--
+/*
+
+var stuff;
+var num1=1;
+var totalPrice=0;
+var num2;
+var shipping=0 ;
+var tax;
+
+
+
+document.writeln("<h3>Item Price</h3>");
+/* calculate the total of all the items*
+ while( num1!=0)
+{
+	stuff=window.prompt("enter a value of the Item. Enter 0 if you're finished",[stuff]);
+	num1=parseFloat(stuff);
+	num2=num1.toFixed(2);
+	totalPrice=parseFloat(totalPrice);
+	totalPrice=totalPrice+num1;
+	
+	if(stuff!=0)
+		document.writeln("$"+num2+"<br/>");
+}
+
+
+/* deciding what type of shipping you want *
+
+
+stuff=window.prompt("enter a S for standard shipping and a E for Expedited ",[stuff]);
+if (stuff=='e'|| stuff=='E'||stuff=='S' || stuff=='s')
+{
+	if(stuff=='S' || stuff=='s')
+	{
+		shipping=parseFloat(shipping);
+		shipping=10.50;
+	
+		if (totalPrice<50)
+		{
+			shipping=7.00;
+		}
+	
+		if(totalPrice<10)
+		{
+			shipping=4.50;
+		}
+	}
+	
+	if(stuff=='E' || stuff=='e')
+	{
+		shipping=15.50;
+	
+		if (totalPrice<50)
+		{
+			shipping=12.00;
+		}
+	
+		if(totalPrice<10)
+		{
+			shipping=9.50;
+		}
+	}
+}
+else
+window.prompt("Please Enter a E or S ");
+totalPrice=totalPrice+shipping;
+
+/* calculating tax*/
+
+/* desplay Information*
+if(stuff=='S' || stuff=='s')
+{
+	document.writeln("<h3>Shipping Method</h3>");
+	document.writeln("Standard<br/>");
+}
+if(stuff=='E' || stuff=='e')
+{
+	document.writeln("<h3>Shipping Method</h3>");
+	document.writeln("Expadited<br/>");
+}
+
+document.writeln("<h3>Shipping Price</h3>");
+document.writeln("$"+shipping.toFixed(2)+"<br/>");
+
+document.writeln("<h3>Tax</h3>");
+document.writeln("$"+tax.toFixed(2)+"<br/>");
+
+document.writeln("<h3>total Price</h3>");
+document.writeln("$"+totalPrice.toFixed(2)+"<br/>");
+*/
+//-->
+</script>
+   </body>
+</html>
